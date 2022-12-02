@@ -40,6 +40,10 @@
             let thead = document.createElement('thead');
             let trHead = document.createElement('tr');
             
+
+            let thFishphoto = document.createElement('th');
+            thFishphoto.scope = 'col';
+            thFishphoto.innerHTML = 'Photo';
         
 
             let thSpecies = document.createElement('th');
@@ -59,6 +63,10 @@
 
             let tableRow = document.createElement('tr');
 
+            let tdFishphoto = document.createElement('td');
+            tdFishphoto.scope = 'row'
+            tdFishphoto.innerHTML = `${fishyData[0]['Image Gallery'][0]['src']}`;
+
             let tdSpecies = document.createElement('td');
             tdSpecies.scope = 'row'
             tdSpecies.innerHTML = `${fishyData[0]['Species Name']}`;
@@ -71,12 +79,14 @@
             tdHabitat.scope = 'row'
             tdHabitat.innerHTML = `${fishyData[0]['Habitat']}`;
 
+            tableRow.append(tdFishphoto)
             tableRow.append(tdSpecies);
             tableRow.append(tdSciName);
             tableRow.append(tdHabitat);
 
             tableBody.append(tableRow);
             thead.append(trHead);
+            trHead.append(thFishphoto)
             trHead.append(thSpecies);
             trHead.append(thSciName);
             trHead.append(thHabitat);
